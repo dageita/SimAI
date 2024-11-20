@@ -279,7 +279,7 @@ namespace MockNccl {
     if (rank == 0 && type ==TP) {
       for (const auto& outer_pair : ringchannels) {
         for (const auto& inner_pair : outer_pair.second) {
-          NcclLog->writeLog(NcclLogLevel::DEBUG,"channel_id :  %did:  %d",outer_pair.first,inner_pair.first);
+          NcclLog->writeLog(NcclLogLevel::DEBUG,"channel_id: %d, id: %d",outer_pair.first,inner_pair.first);
           for (int value : inner_pair.second) {
             NcclLog->writeLog(NcclLogLevel::DEBUG," %d ",value);
           }
