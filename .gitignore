@@ -6,5 +6,8 @@ bin/
 results/
 test/log/
 *.log
+*.csv
+*.txt
+*.md
 .cur*
 .DS_Store
