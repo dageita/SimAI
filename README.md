@@ -7,12 +7,13 @@
 
 | Date | Event | Location | Content | Type |
 |:----:|:------|:---------|:--------|:----:|
-| **Dec 27, 2024** | **SimAI Technical Presentation** | 📍 Beihang University | SimAI Technical Sharing & Discussion | 🎓 On-site |
+| TBD  | SimAI Technical Presentation | 📍 Peking University | SimAI Discussion | 🎓 On-site |
 
 ### 🌟 Past Events
 
 | Date | Event | Location | Content | Type |
 |:----:|:------|:---------|:--------|:----:|
+| Dec 27, 2024 | SimAI Technical Presentation | 📍 Beihang University | SimAI Technical Sharing & Discussion | 🎓 On-site |
 | Dec 6, 2024 | HKUST Technical Workshop | 📍 HKUST(GZ) | SimAI Technical Sharing & Discussion | 🎓 On-site |
 | Dec 5, 2024 | [Bench'24 Conference](https://mp.weixin.qq.com/s/STic_E12xMhZRxhzK9wRnw) | 📍 Guangzhou | SimAI Tutorial & Deep-dive Session | 🎓 On-site |
 | Nov 26, 2024 | SimAI Community Live Stream | 🌐 Online | Interactive Technical Discussion & Demo (400+ Attendees) | 💻 Virtual |
@@ -92,9 +93,9 @@ SimAI supports three major operation modes to meet different simulation requirem
 
 SimAI work has been accepted by NSDI'25 Spring, for more details, please refer to our paper below:
 
-*SimAI: Unifying Architecture Design and Performance Tunning for Large-Scale Large Language Model Training with Scalability and Precision.*
+*SimAI: Unifying Architecture Design and Performance Tuning for Large-Scale Large Language Model Training with Scalability and Precision.*
 
-[[pdf](https://ennanzhai.github.io/pub/nsdi25spring-simai.pdf)] / [[slides](./docs/SimAI_Intro_Online.pdf)] / [video]
+[[pdf](https://ennanzhai.github.io/pub/nsdi25spring-simai.pdf)] / [[slides](./docs/SimAI_Intro_Online.pdf)] / [[video](https://n.dingtalk.com/dingding/live-room/index.html?roomId=OF5BkBUXVxmgsK7x&liveUuid=305736cd-aa70-498b-8003-2b471a53decd)]
 
 We encourage innovative research and extensions based on SimAI. Welcome to join our community group or reach out via email for discussion. We may provide technical support.
 
@@ -142,10 +143,10 @@ $  ./bin/SimAI_analytical -w example/workload_analytical.txt -g 9216 -g_p_s 8 -r
 
 ```bash
 # Create network topo
-$ python3 ./astra-sim-alibabacloud/inputs/topo/gen_HPN_7.0_topo_mulgpus_one_link.py -g 128 -gt A100 -bw 100Gbps -nvbw 2400Gbps
+$ python3 ./astra-sim-alibabacloud/inputs/topo/gen_Topo_Template.py -topo Spectrum-X -g 128 -gt A100 -bw 100Gbps -nvbw 2400Gbps
 
 # Running
-$ AS_SEND_LAT=3 AS_NVLS_ENABLE=1 ./bin/SimAI_simulator -t 16 -w ./example/microAllReduce.txt -n ./HPN_7_0_128_gpus_8_in_one_server_with_single_plane_100Gbps_A100 -c astra-sim-alibabacloud/inputs/config/SimAI.conf
+$ AS_SEND_LAT=3 AS_NVLS_ENABLE=1 ./bin/SimAI_simulator -t 16 -w ./example/microAllReduce.txt -n ./Spectrum-X_128g_8gps_100Gbps_A100 -c astra-sim-alibabacloud/inputs/config/SimAI.conf
 
 ```
 
